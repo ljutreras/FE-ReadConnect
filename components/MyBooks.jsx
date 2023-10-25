@@ -12,7 +12,7 @@ export default function MyBookCollection({ booksCollection, route }) {
 
     const handleBookReadedDelete = (item) => {
         const email = localStorage.getItem('email')
-        fetch(`/users/sign-in/users/book/readed/${item.id}`, {
+        fetch(`${url}/users/sign-in/users/book/readed/${item.id}`, {
             method: "DELETE",
             headers: {
                 'Content-Type': 'application/json'

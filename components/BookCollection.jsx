@@ -35,7 +35,6 @@ const ThirdButton = ({ handleClick, page, totalPage }) => {
     </>
 };
 
-
 export default function BookCollection({ booksCollection }) {
 
     const [books, setBooks] = useState(booksCollection);
