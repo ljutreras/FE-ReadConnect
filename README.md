@@ -1,4 +1,4 @@
-##Antes de comenzar, 
+## Antes de comenzar, 
 
 asegúrate de tener el Backend en funcionamiento. Puedes encontrar las instrucciones para levantar el servidor en [este enlace](https://github.com/ljutreras/be-readconnect).
 
