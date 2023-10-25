@@ -18,7 +18,7 @@ const Layout = ({ children }) => {
     })
 
     const handleSignUp = async (signUp) => {
-        fetch(`${url}/users/sign-up`, {
+        fetch(`https://readconnect-be.onrender.com/users/sign-up`, {
             method: "POST",
             headers: {
                 'Content-Type': 'application/json'
@@ -45,7 +45,7 @@ const Layout = ({ children }) => {
     }
 
     const handleLogin = async (login) => {
-        fetch(`${url}/users/sign-in`, {
+        fetch(`https://readconnect-be.onrender.com/users/sign-in`, {
             method: "POST",
             headers: {
                 'Content-Type': 'application/json'
