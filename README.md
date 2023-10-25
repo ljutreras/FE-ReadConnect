@@ -1,13 +1,13 @@
 ## Antes de comenzar, 
 
-asegúrate de tener el Backend en funcionamiento. Puedes encontrar las instrucciones para levantar el servidor en [este enlace](https://github.com/ljutreras/be-readconnect).
+asegúrate de tener el Backend en funcionamiento. Puedes encontrar las instrucciones para levantar el servidor en el siguiente [ENLACE](https://github.com/ljutreras/be-readconnect).
 
 Una vez que tengas el Backend en funcionamiento, puedes proceder a levantar el servidor Frontend de este repositorio. Para hacerlo, sigue estos pasos:
 
 1. Abre tu terminal y navega hasta la ubicación del repositorio Frontend y ejecutaremos el siguiente comando:
-   ```
-      npm i
-   ```
+```
+   npm i
+```
 
 3. Ejecuta el siguiente comando para iniciar el servidor:
 
