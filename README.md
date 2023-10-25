@@ -15,6 +15,8 @@ Una vez que tengas el Backend en funcionamiento, puedes proceder a levantar el s
    npm run dev
 ```
 
+Es importante que el FE se encuentre en el puerto http://localhost:3000 ya que de esta manera el Backend tiene el CROSS
+
 Abre tu navegador web y visita [http://localhost:3000] para acceder a la página web de Read Connect.
 Dentro de la página web, encontrarás dos opciones principales: [LOGIN] y [SIGNUP]. Si eres un usuario nuevo, te recomendamos hacer clic en la pestaña [SIGN UP] para registrarte. Si ya tienes una cuenta, puedes iniciar sesión utilizando la opción [LOGIN].
 
