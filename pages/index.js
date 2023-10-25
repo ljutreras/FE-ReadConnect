@@ -1,10 +1,7 @@
-import 'dotenv/config'
 import Layout from '../components/Layout'
 import BookCollection from "../components/BookCollection"
 import Search from '../components/Search'
 import { useState } from 'react'
-
-const url = process.env.SERVER_URL
 
 export default function Home({ booksCollection }) {
 
@@ -13,7 +10,7 @@ export default function Home({ booksCollection }) {
 
   const searchByTitle = async (title) => {
     setLoad(false)
-    const res = await fetch(`${url}/books/search`, {
+    const res = await fetch(`http://localhost:3001/books/search`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -35,7 +32,7 @@ export default function Home({ booksCollection }) {
 
 export async function getServerSideProps() {
 
-  const res = await fetch(`${url}/books/paginator?page=1&perPage=12`)
+  const res = await fetch(`http://localhost:3001/books/paginator?page=1&perPage=12`)
   const booksCollection = await res.json()
   return { props: { booksCollection } }
 
