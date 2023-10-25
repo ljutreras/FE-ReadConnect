@@ -1,6 +1,7 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable react/jsx-key */
 /* eslint-disable @next/next/no-img-element */
+import 'dotenv/config'
 import Image from "next/image";
 import { useState } from "react";
 

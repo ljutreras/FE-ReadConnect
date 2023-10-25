@@ -1,3 +1,4 @@
+import 'dotenv/config'
 import Layout from '../components/Layout'
 import BookCollection from "../components/BookCollection"
 import Search from '../components/Search'
