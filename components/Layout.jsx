@@ -4,6 +4,8 @@ import Main from "./Main"
 import LoginController from "./LoginController"
 import { useEffect, useState } from "react"
 
+const url = process.env.SERVER_URL
+
 const Layout = ({ children }) => {
 
     const [isLogin, setIsLogin] = useState(null)
@@ -16,7 +18,7 @@ const Layout = ({ children }) => {
     })
 
     const handleSignUp = async (signUp) => {
-        fetch("http://localhost:3001/users/sign-up", {
+        fetch(`${url}/users/sign-up`, {
             method: "POST",
             headers: {
                 'Content-Type': 'application/json'
@@ -43,7 +45,7 @@ const Layout = ({ children }) => {
     }
 
     const handleLogin = async (login) => {
-        fetch("http://localhost:3001/users/sign-in", {
+        fetch(`${url}/users/sign-in`, {
             method: "POST",
             headers: {
                 'Content-Type': 'application/json'

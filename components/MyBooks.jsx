@@ -4,7 +4,7 @@
 import Image from "next/image";
 import { useState } from "react";
 
-
+const url = process.env.SERVER_URL
 
 export default function MyBookCollection({ booksCollection, route }) {
 
@@ -12,7 +12,7 @@ export default function MyBookCollection({ booksCollection, route }) {
 
     const handleBookReadedDelete = (item) => {
         const email = localStorage.getItem('email')
-        fetch(`http://localhost:3001/users/book/readed/${item.id}`, {
+        fetch(`/users/sign-in/users/book/readed/${item.id}`, {
             method: "DELETE",
             headers: {
                 'Content-Type': 'application/json'
@@ -40,7 +40,7 @@ export default function MyBookCollection({ booksCollection, route }) {
     }
     const handleBookToReadDelete = (item) => {
         const email = localStorage.getItem('email')
-        fetch(`http://localhost:3001/users/book/to-read/${item.id}`, {
+        fetch(`${url}/users/book/to-read/${item.id}`, {
             method: "DELETE",
             headers: {
                 'Content-Type': 'application/json'

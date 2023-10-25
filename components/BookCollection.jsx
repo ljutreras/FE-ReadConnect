@@ -4,6 +4,8 @@
 import Image from "next/image";
 import { useState } from "react";
 
+const url = process.env.SERVER_URL
+
 const FirstButton = ({ handleClick, page, totalPage }) => {
     return <>
         {
@@ -47,7 +49,7 @@ export default function BookCollection({ booksCollection }) {
     }
 
     const fetchBooks = async (pages) => {
-        const res = await fetch(`http://localhost:3001/books/paginator?page=${pages}&perPage=12`)
+        const res = await fetch(`${url}/books/paginator?page=${pages}&perPage=12`)
         const _books = await res.json()
         setBooks(_books)
     }
@@ -70,7 +72,7 @@ export default function BookCollection({ booksCollection }) {
 
     const handleBookReaded = (item) => {
         const email = localStorage.getItem('email')
-        fetch(`http://localhost:3001/users/book/readed/${email}`, {
+        fetch(`${url}/users/book/readed/${email}`, {
             method: "POST",
             headers: {
                 'Content-Type': 'application/json'
@@ -94,7 +96,7 @@ export default function BookCollection({ booksCollection }) {
 
     const handleBookToRead = (item) => {
         const email = localStorage.getItem('email')
-        fetch(`http://localhost:3001/users/book/to-read/${email}`, {
+        fetch(`${url}/users/book/to-read/${email}`, {
             method: "POST",
             headers: {
                 'Content-Type': 'application/json'
