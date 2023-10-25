@@ -16,7 +16,7 @@ const Search = ({searchByTitle}) => {
   return (
     <div className='containerSearch'>
       <form onSubmit={(e) => handleSearchByTitle(e)}>
-        <input onChange={(e)=> handleTitle(e)} value={title} type="search" />
+        <input onChange={(e)=> handleTitle(e)} value={title} type="search" placeholder='Geoprocessing with...'/>
         <button type="submit">
           Send
         </button>

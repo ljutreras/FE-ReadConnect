@@ -1,3 +1,13 @@
+:root {
+  --main-bg-color: #bfbfbf;
+  --button-bg-color: #fc814a;
+  --button-current-bg-color: #d96b38;
+  --card-bg-color: #e8e8e8;
+  --footer-bg-color: #564256;
+  /* --button-bg-color: #D1EFB5; */
+  /* --main-bg-color: #D3FAD6; */
+}
+
 html,
 body {
   padding: 0;
@@ -16,7 +26,7 @@ body {
   grid-template-rows: auto 1fr auto;
   justify-content: center;
   align-items: center;
-  background-color: antiquewhite;
+  background-color: var(--main-bg-color);
 }
 
 header {
@@ -27,6 +37,22 @@ nav {
   height: 64px;
   display: flex;
   width: 100%;
+  padding: 0 15px;
+}
+
+.navDataLogin {
+  background-color: var(--button-bg-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 1px 1px 1px 0px rgba(0,0,0,0.2);
+  margin: 6px;
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
 }
 
 ul {
@@ -37,7 +63,7 @@ ul {
   padding: 0;
   overflow: hidden;
   width: 100%;
-  font-size: 12px;
+  font-size: 16px;
   gap: 10px;
   line-height: 24px;
   font-weight: 500;
@@ -70,7 +96,8 @@ main {
 footer {
   display: flex;
   height: 250px;
-  background-color: aqua;
+  background-color: var(--footer-bg-color);
+  color: antiquewhite;
   width: 100%;
 }
 
@@ -106,7 +133,7 @@ footer {
   width: calc(100% - 40px);
   height: calc(100% - 40px);
   box-shadow: 2px 2px 2px 1px rgba(0,0,0,0.2);
-  background-color: aliceblue;
+  background-color: var(--card-bg-color);
   border-radius: 3px;
 }
 
@@ -160,7 +187,7 @@ footer {
   position: absolute;
   display: flex;
   flex-direction: column;
-  justify-content: start;
+  justify-content: space-between;
   align-items: center;
   color: transparent;
   background: rgba(26, 188, 156, 0);
@@ -178,13 +205,17 @@ footer {
   color: rgba(0, 0, 0, 0.86);
 }
 
+.cardInfo:hover div {
+  visibility: visible;
+}
+
 .cardInfo p {
   text-align: left;
   max-height: 40%;
   overflow: hidden;
   display: -webkit-box;
   -webkit-box-orient: vertical;
-  -webkit-line-clamp: 3;
+  -webkit-line-clamp: 4;
   font-size: 18px;
   width: 100%;
   padding: 0 15px;
@@ -194,6 +225,15 @@ footer {
 
 .cardInfo p b {
   font-size: 22px;
+}
+
+.cardInfoAction {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  padding: 8px 15px ;
+  visibility: hidden;
 }
 
 
@@ -208,8 +248,10 @@ footer {
   justify-content: space-between;
 }
 
-.buttonPrev button, .buttonNext button {
-  background-color: #4CAF50;
+.buttonPrev button, .buttonNext button,
+.cardActionLogin button, .navLoginCardAction button,
+ .navLoginCardText button, .cardInfoAction button {
+  background-color: var(--button-bg-color);
   border: none;
   border-radius: 5px;
   color: white;
@@ -223,13 +265,23 @@ footer {
   cursor: pointer;
 }
 
+.btnSmall {
+  line-height: 20px !important;
+  padding: 10px 16px !important;
+  font-size: 22px !important;
+}
+
+.fullWith {
+  width: 100% !important;
+}
+
 .currentPage {
   display: flex;
   gap: 12px;
 }
 
 .currentPage button {
-  background-color: rgba(76, 175, 79, 1);
+  background-color: var(--button-current-bg-color);
   border: none;
   border-radius: 5px;
   color: white;
@@ -254,25 +306,36 @@ footer {
   justify-content: space-between;
 }
 
-.containerSearch form input[type=search] {
+.containerSearch form input[type=search],
+ .cardFormLogin form input[type=email],
+  .cardFormLogin form input[type=password],
+  .cardFormLogin form input[type=text] {
   box-sizing: border-box;
   padding: 12px 20px;
   width: 80%;
+  margin: auto;
   border: none;
   border-bottom: 1px solid black;
   font-size: 18px;
 }
 
-.containerSearch form input[type=text]:focus {
+.w100 {
+  width: 100% !important;
+}
+
+.containerSearch form input[type=search]:focus,
+ .cardFormLogin form input[type=email]:focus,
+  .cardFormLogin form input[type=password]:focus,
+  .cardFormLogin form input[type=text]:focus {
   border: none;
   border-bottom: 1px solid #555;
 }
 
-.containerSearch form button {
-  background-color: rgb(121, 127, 0);
+.containerSearch form button, .cardFormLogin form button {
+  background-color: var(--button-bg-color);
   border: none;
   border-radius: 5px;
-  color: white;
+  color: rgb(0, 0, 0);
   padding: 15px 32px;
   text-align: center;
   text-decoration: none;
@@ -281,4 +344,99 @@ footer {
   line-height: 30px;
   max-height: 60px;
   cursor: pointer;
+}
+
+/* Login */
+
+.contentLoginController {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: #007fff;
+}
+
+.loginController {
+  background-color: #ffffff;
+  padding: 15px;
+  width: 380px;
+  max-width: 100%;
+}
+
+.cardFormLogin {
+  padding: 15px 0;
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+}
+
+.cardFormLogin form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.cardTitleLogin {
+  height: 60px;
+  line-height: 60px;
+  font-size: 22px;
+}
+
+.cardActionLogin {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 15px;
+}
+
+/* NavBar */
+
+.navLoginWindows {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 10;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.navLoginCard {
+  background-color: #ffffff;
+  padding: 15px;
+  border-radius: 5px;
+  box-shadow: 2px 2px 2px 1px rgba(0,0,0,0.2);
+  width: 400px;
+  max-width: 100%;
+}
+
+.navLoginCardTitle {
+  font-size: 20px;
+  font-weight: bold;
+  border-bottom: 1px solid #ddd;
+  height: 40px;
+  line-height: 40px;
+}
+
+.navLoginCardText {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px 0;
+}
+
+.navLoginCardText p {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.navLoginCardAction {
+  display: flex;
+  justify-content: end;
 }

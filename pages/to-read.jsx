@@ -4,7 +4,7 @@ import MyBookCollection from "../components/myBookCollection"
 import Layout from '../components/Layout'
 
 
-const MyBook = () => {
+const ToRead = () => {
 
     const [load, setLoad] = useState(true)
     const [books, setBooks] = useState({
@@ -15,21 +15,21 @@ const MyBook = () => {
     })
 
     useEffect(() => {
-        const bookReaded = JSON.parse(localStorage.getItem('bookReaded'))
-        const booksLength = bookReaded.length
+        const bookToRead = JSON.parse(localStorage.getItem('bookToRead'))
+        const booksLength = bookToRead.length
         const totalPages = Math.trunc(booksLength / books.perPage) + 1;
         setBooks({ ...books, ['totalPage']: totalPages })
-        setBooks({ ...books, ['data']: bookReaded })
+        setBooks({ ...books, ['data']: bookToRead })
         setLoad(false)
     }, [])
 
     return (
         <>
             <Layout>
-                {!load && <MyBookCollection route='my-books' booksCollection={books} />}
+                {!load && <MyBookCollection route='to-read' booksCollection={books} />}
             </Layout>
         </>
     )
 }
 
-export default MyBook
+export default ToRead

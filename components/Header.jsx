@@ -1,9 +1,9 @@
 import NavBar from "./NavBar"
 
-const Header = () => {
+const Header = ({dataLogin, handleClearStorage}) => {
   return (
     <header>
-        <NavBar/>
+        <NavBar handleClearStorage={handleClearStorage} dataLogin={dataLogin}/>
     </header>
   )
 }
