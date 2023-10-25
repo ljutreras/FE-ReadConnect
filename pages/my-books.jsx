@@ -1,7 +1,7 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import { useEffect, useState } from "react"
 import Layout from '../components/Layout'
-import MyBookCollection from "../components/myBookCollection"
+import MyBookCollection from "../components/MyBookCollection"
 
 
 const MyBook = () => {

@@ -1,11 +1,8 @@
-import 'dotenv/config'
 import Header from "./Header"
 import Footer from "./Footer"
 import Main from "./Main"
 import LoginController from "./LoginController"
 import { useEffect, useState } from "react"
-
-const url = process.env.SERVER_URL
 
 const Layout = ({ children }) => {
 
@@ -19,7 +16,7 @@ const Layout = ({ children }) => {
     })
 
     const handleSignUp = async (signUp) => {
-        fetch(`https://readconnect-be.onrender.com/users/sign-up`, {
+        fetch(`http://localhost:3001/users/sign-up`, {
             method: "POST",
             headers: {
                 'Content-Type': 'application/json'
@@ -36,8 +33,8 @@ const Layout = ({ children }) => {
                     localStorage.setItem('email', signUp.email)
                     localStorage.setItem('firstName', signUp.firstName)
                     localStorage.setItem('lastName', signUp.lastName)
-                    localStorage.setItem('bookReaded', null)
-                    localStorage.setItem('bookToRead', null)
+                    localStorage.setItem('bookReaded', JSON.stringify([]))
+                    localStorage.setItem('bookToRead', JSON.stringify([]))
                     setIsLogin(true)
                     return;
                 }
@@ -46,7 +43,7 @@ const Layout = ({ children }) => {
     }
 
     const handleLogin = async (login) => {
-        fetch(`https://readconnect-be.onrender.com/users/sign-in`, {
+        fetch(`http://localhost:3001/users/sign-in`, {
             method: "POST",
             headers: {
                 'Content-Type': 'application/json'

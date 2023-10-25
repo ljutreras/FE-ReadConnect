@@ -1,11 +1,8 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable react/jsx-key */
 /* eslint-disable @next/next/no-img-element */
-import 'dotenv/config'
 import Image from "next/image";
 import { useState } from "react";
-
-const url = process.env.SERVER_URL
 
 export default function MyBookCollection({ booksCollection, route }) {
 
@@ -13,7 +10,7 @@ export default function MyBookCollection({ booksCollection, route }) {
 
     const handleBookReadedDelete = (item) => {
         const email = localStorage.getItem('email')
-        fetch(`${url}/users/sign-in/users/book/readed/${item.id}`, {
+        fetch(`http://localhost:3001/users/book/readed/${item.id}`, {
             method: "DELETE",
             headers: {
                 'Content-Type': 'application/json'
@@ -41,7 +38,7 @@ export default function MyBookCollection({ booksCollection, route }) {
     }
     const handleBookToReadDelete = (item) => {
         const email = localStorage.getItem('email')
-        fetch(`${url}/users/book/to-read/${item.id}`, {
+        fetch(`http://localhost:3001/users/book/to-read/${item.id}`, {
             method: "DELETE",
             headers: {
                 'Content-Type': 'application/json'

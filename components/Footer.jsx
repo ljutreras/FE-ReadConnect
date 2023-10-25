@@ -8,13 +8,8 @@ const Footer = () => {
                 <div>
                     <div>
                         <h3>About Read Connect</h3>
-                        <p>Read Connect is a platform where you will find the best evaluated books, it is a place to connect the world with paper to create a feeling</p>
+                        <p className='aboutFooter'>Read Connect is a platform where you will find the best evaluated books, it is a place to connect the world with paper to create a feeling</p>
                     </div>
-                    <ul>
-                        <li><Link href="/not-found">Facebook</Link></li>
-                        <li><Link href="/not-found">Instagram</Link></li>
-                        <li><Link href="/not-found">Pinterest</Link></li>
-                    </ul>
                 </div>
             </div>
             <div>

@@ -3,7 +3,7 @@
   --button-bg-color: #fc814a;
   --button-current-bg-color: #d96b38;
   --card-bg-color: #e8e8e8;
-  --footer-bg-color: #564256;
+  --footer-bg-color: #a989a95e;
   /* --button-bg-color: #D1EFB5; */
   /* --main-bg-color: #D3FAD6; */
 }
@@ -95,9 +95,18 @@ main {
 
 footer {
   display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  font-size: 16px;
+  font-weight: 500;
+  padding: 20px 15px;
   height: 250px;
   background-color: var(--footer-bg-color);
-  color: antiquewhite;
+  color: rgb(45, 16, 8);
+  width: 100%;
+}
+
+.aboutFooter {
   width: 100%;
 }
 
@@ -357,7 +366,7 @@ footer {
   left: 0;
   height: 100%;
   width: 100%;
-  background-color: #007fff;
+  background-color: rgba(191, 191, 191, 0.97);
 }
 
 .loginController {
